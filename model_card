@@ -1,0 +1,48 @@
+# Model Card
+Model Card: Construction Site Safety Object Detection
+
+1. Model Details
+Model Name: YOLOv8n for Construction Site Safety
+Model Type: Object Detection
+Development Stage: Training & Evaluation
+Description: This model is trained to detect and locate safety-related objects and individuals on construction sites, including hardhats, masks, safety vests, and potential hazards.
+
+2. Training Data
+Dataset: Construction Site Safety Image Dataset (source: Roboflow)
+Data Format: Images (.jpg) with corresponding bounding box annotations (.txt) in YOLO format.
+Data Split:
+Train: [Number of images] images
+Validation: [Number of images] images
+Test: [Number of images] images
+Classes:
+Hardhat
+Mask
+NO-Hardhat
+NO-Mask
+NO-Safety Vest
+Person
+Safety Cone
+Safety Vest
+machinery
+vehicle
+Data Annotations: Bounding boxes around each object of interest in the images, labeled with the corresponding class name.
+Data Preprocessing:
+Images resized to 640x640 pixels.
+Formatting for YOLOv8: Roboflow handles formatting the annotated data into the specific format required by YOLOv8. This involves converting the bounding box coordinates and labels into text files (usually .txt) that correspond to each image. These files contain the class ID and normalized bounding box coordinates for each object in the image.
+Dataset Splitting: The dataset is typically split into training, validation, and test sets. This allows the model to be trained on one set of data, its performance to be monitored on a separate validation set, and its final accuracy to be assessed on a held-out test set.  
+
+3. Evaluation Data
+Dataset: Same source as training data.
+Data Split: Test split of the Construction Site Safety Image Dataset.
+Evaluation Metrics:
+Precision
+Recall
+mAP (mean Average Precision)
+4. Ethical Considerations
+Potential Biases: under-representation of certain demographics or work environments, and how these biases might affect the model's performance.
+Risks and Limitations 
+Potential misidentification of objects or reliance on the model for critical safety decisions. Also, mention limitations in the model's capabilities.]
+Use Cases:
+Automated safety monitoring on construction sites.
+Generating alerts for potential safety violations.
+Providing data for safety training and analysis.
